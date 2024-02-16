@@ -19,7 +19,7 @@ card.addEventListener('click', function(){
     const titleContainer = document.getElementById('title-container');
     const p = document.createElement('p');
     p.innerText = titleCount + ". "+ title;
-
+p.classList.add("card-title", "text-gray-500","text-2xl", "font-semibold");
     titleContainer.appendChild(p);
     titleCount ++;
 
@@ -64,6 +64,7 @@ document.getElementById('input-field').value = "";
 }else{
     alert("Invalid code.");
     document.getElementById('input-field').value = "";
+    
 }
         }else{
             alert('Spend more MAN!!');
@@ -74,6 +75,26 @@ document.getElementById('input-field').value = "";
 
 
     })
+//to display the purchase memo
+    function purchaseMemoDisplay(){
 
-    
+        if ( totalPrice > 0){
+            const purchaseMemoElement = document.getElementById("purchase-memo");
+            const purchaseMemo = purchaseMemoElement.classList.remove('hidden');
+            const section = document.getElementById("section");
+        const sectionOpacity = section.classList.add("opacity-50");
+        }else{
+            alert("Error: Nothing in the cart.")
+        }
+
+
+    }
+    // return to home.
+    function returnToHome(){
+        const returnHomeElement = document.getElementById("purchase-memo");
+        const returnHome = returnHomeElement.classList.add("hidden");
+        const section = document.getElementById("section");
+        const sectionOpacity = section.classList.remove("opacity-50");
+
+    }
 
